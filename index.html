@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lagnajita Das | Aspiring Software Engineer</title>
+
+    <meta name="description"
+          content="Portfolio of Lagnajita Das, BCA student and aspiring software engineer skilled in Java, Python, C, Web Development and DBMS.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #1e293b;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #22d3ee;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cbd5e1;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #22d3ee;
+        }
+
+        /* HERO */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+            background:
+                radial-gradient(circle at top, #172554 0%, #0b1120 50%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(42px, 7vw, 75px);
+            margin-bottom: 15px;
+            color: #f8fafc;
+        }
+
+        .hero-content h1 span {
+            color: #22d3ee;
+        }
+
+        .hero-content h2 {
+            font-size: clamp(22px, 4vw, 34px);
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            max-width: 700px;
+            margin: auto;
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .primary {
+            background: #06b6d4;
+            color: #06111f;
+        }
+
+        .primary:hover {
+            background: #22d3ee;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid #334155;
+            color: #e2e8f0;
+        }
+
+        .secondary:hover {
+            border-color: #22d3ee;
+            color: #22d3ee;
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #f8fafc;
+        }
+
+        .section-title span {
+            color: #22d3ee;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #94a3b8;
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .about-info {
+            display: grid;
+            gap: 15px;
+        }
+
+        .info-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: #22d3ee;
+        }
+
+        .info-card strong {
+            color: #22d3ee;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: #22d3ee;
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            color: #f8fafc;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 28px;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #22d3ee;
+        }
+
+        .project-card h3 {
+            color: #22d3ee;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #22d3ee;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* EDUCATION */
+
+        .education-card {
+            background: #111827;
+            border-left: 4px solid #22d3ee;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .education-card h3 {
+            color: #f8fafc;
+        }
+
+        .education-card p {
+            color: #94a3b8;
+        }
+
+        /* CONTACT */
+
+        .contact-container {
+            text-align: center;
+        }
+
+        .contact-container p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 12px 20px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: #22d3ee;
+            color: #22d3ee;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+        }
+
+        footer span {
+            color: #22d3ee;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">
+                Lagnajita Das
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Hi, I'm <span>Lagnajita Das</span> 👋
+            </h1>
+
+            <h2>
+                Aspiring Software Engineer
+            </h2>
+
+            <p>
+                BCA student passionate about software development,
+                programming and building practical solutions using
+                Java, Python, C and web technologies.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-title">
+            <h2>About <span>Me</span></h2>
+            <p>Get to know me</p>
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+                    I am Lagnajita Das, a BCA student at MAKAUT
+                    with a strong interest in software development
+                    and problem solving.
+                </p>
+
+                <p>
+                    I am currently strengthening my knowledge of
+                    Java, Python, C, Data Structures & Algorithms,
+                    DBMS and Web Development.
+                </p>
+
+                <p>
+                    My goal is to become a skilled software engineer
+                    and continuously improve my technical and
+                    problem-solving abilities.
+                </p>
+
+            </div>
+
+            <div class="about-info">
+
+                <div class="info-card">
+                    🎓 <strong>Education</strong>
+                    <br>
+                    Bachelor of Computer Applications
+                </div>
+
+                <div class="info-card">
+                    💻 <strong>Career Goal</strong>
+                    <br>
+                    Aspiring Software Engineer
+                </div>
+
+                <div class="info-card">
+                    📊 <strong>Certification</strong>
+                    <br>
+                    Data Analytics
+                </div>
+
+                <div class="info-card">
+                    📍 <strong>Location</strong>
+                    <br>
+                    West Bengal, India
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-title">
+            <h2>My <span>Skills</span></h2>
+            <p>Technologies I am learning and working with</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon">☕</div>
+                <h3>Java</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🐍</div>
+                <h3>Python</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">©️</div>
+                <h3>C Programming</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>HTML & CSS</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🗄️</div>
+                <h3>MySQL</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🧠</div>
+                <h3>DSA</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🔧</div>
+                <h3>Git & GitHub</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>VS Code</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-title">
+            <h2>My <span>Projects</span></h2>
+            <p>Some of my development work</p>
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <h3>🧮 Scientific Calculator</h3>
+
+                <p>
+                    A Hello Kitty themed scientific calculator
+                    developed using Java Swing.
+                </p>
+
+                <a
+                    href="https://github.com/lagnajitadas/Hello-Kitty-Scientific-Calculator"
+                    target="_blank"
+                    class="project-link">
+                    View on GitHub →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>🎮 Guess Game</h3>
+
+                <p>
+                    A Java-based guessing game created to practice
+                    programming logic and user interaction.
+                </p>
+
+                <a
+                    href="https://github.com/lagnajitadas/GuessGame"
+                    target="_blank"
+                    class="project-link">
+                    View on GitHub →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>🧪 Git Test Project</h3>
+
+                <p>
+                    A project created to practice Git and GitHub
+                    version control concepts.
+                </p>
+
+                <a
+                    href="https://github.com/lagnajitadas/GitTest-Lagnajita-Das"
+                    target="_blank"
+                    class="project-link">
+                    View on GitHub →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="section-title">
+            <h2>My <span>Education</span></h2>
+            <p>Academic background</p>
+        </div>
+
+        <div class="education-card">
+
+            <h3>🎓 Bachelor of Computer Applications (BCA)</h3>
+
+            <p>
+                Maulana Abul Kalam Azad University of Technology
+                (MAKAUT)
+            </p>
+
+            <p>
+                Currently pursuing BCA
+            </p>
+
+        </div>
+
+        <div class="education-card">
+
+            <h3>📚 Higher Secondary Education</h3>
+
+            <p>
+                West Bengal Higher Secondary Education
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+            <h2>Let's <span>Connect</span></h2>
+            <p>Feel free to reach out</p>
+        </div>
+
+        <div class="contact-container">
+
+            <p>
+                I am open to learning opportunities, internships
+                and software development opportunities.
+            </p>
+
+            <div class="contact-links">
+
+                <a
+                    href="mailto:lagnajitadas2000@gmail.com"
+                    class="contact-link">
+                    📧 Email
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/lagnajita-das-4600a92b2"
+                    target="_blank"
+                    class="contact-link">
+                    💼 LinkedIn
+                </a>
+
+                <a
+                    href="https://github.com/lagnajitadas"
+                    target="_blank"
+                    class="contact-link">
+                    🐙 GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Lagnajita Das</span>.
+            Built with HTML & CSS.
+        </p>
+
+    </footer>
+
+</body>
+</html>
